@@ -1,4 +1,9 @@
 CfwnApp::Application.routes.draw do
+
+  # Static Pages
+  root                  to: 'static_pages#home'
+  match '/about',        to: 'static_pages#about'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
