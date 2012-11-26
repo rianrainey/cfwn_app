@@ -1,0 +1,31 @@
+<h1>Listing workouts</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+  </tr>
+
+<% @workouts.each do |workout| %>
+  <tr>
+    <td><%= workout.title %></td>
+    <td><%= workout.body %></td>
+    <td>
+      <div class="btn-group">
+        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Action<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Show', admin_workout_path(workout) %></li>
+          <li><%= link_to 'Edit', edit_admin_workout_path(workout) %></li>
+          <li><%= link_to 'Destroy', admin_workout_path(workout), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div>      
+    </td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Workout', new_admin_workout_path %>

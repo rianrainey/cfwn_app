@@ -3,15 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.0.4'
 
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-#gem 'sqlite3'
 gem 'pg'
+
+gem 'bootstrap-wysihtml5-rails'
+
+gem 'devise'
 
 group :development do
 	gem 'rspec-rails'
+	gem 'annotate'
+	gem 'guard-rspec'
 end
 
 group :test do

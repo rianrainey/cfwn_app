@@ -1,8 +1,28 @@
 CfwnApp::Application.routes.draw do
 
+  devise_for :users
+
+  get "workouts/index"
+
+  #resources :workouts
+
+  resources :users, :only => [:show]
+
   # Static Pages
   root                  to: 'static_pages#home'
   match '/about',        to: 'static_pages#about'
+
+  namespace :admin do
+    resources :users, :except => [:show]
+    resources :workouts, :roles
+  end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
