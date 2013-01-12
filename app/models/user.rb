@@ -27,5 +27,10 @@ class User < ActiveRecord::Base
   def has_role?(*role_names)
     self.roles.where(:name => role_names).present?
   end
+
+  # Join first and last names of user
+  def name
+    [firstName, lastName].join(" ")
+  end
   
 end
