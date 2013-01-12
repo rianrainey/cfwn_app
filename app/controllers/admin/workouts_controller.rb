@@ -1,6 +1,8 @@
 class Admin::WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
+
+  before_filter :require_admin
   
   layout 'admin'
 

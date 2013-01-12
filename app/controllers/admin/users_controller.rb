@@ -2,8 +2,8 @@ class Admin::UsersController < ApplicationController
   # GET /users
   # GET /users.json
   
-  before_filter :authenticate_user!
-  before_filter :require_admin, :except => ["edit"]
+  #before_filter :authenticate_user!
+  before_filter :require_admin
   
   layout 'admin'
 
@@ -16,8 +16,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # GET /admin/users/1
+  # GET /admin/users/1.json
   def show
     @user = User.find(params[:id])
 
@@ -27,8 +27,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
+  # GET /admin/users/new
+  # GET /admin/users/new.json
   def new
     @user = User.new
     @roles = Role.find(:all)
@@ -39,20 +39,20 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
+  # GET /admin/users/1/edit
   def edit
-    if current_user.id != params[:id]
-      flash[:error] = "You can only edit your own profile."
-      redirect_to :back
-    end
+    # if current_user.id != params[:id]
+    #   flash[:error] = "You can only edit your own profile."
+    #   redirect_to :back
+    # end
     
     @user = User.find(params[:id])
     @roles = Role.find(:all)
 
   end
 
-  # POST /users
-  # POST /users.json
+  # POST /admin/users
+  # POST /admin/users.json
   def create
     @user = User.new(params[:user])
 
@@ -67,8 +67,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
+  # PUT /admin/users/1
+  # PUT /admin/users/1.json
   def update
     params[:user][:role_ids] ||= nil
     @user = User.find(params[:id])
@@ -84,8 +84,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  # DELETE /admin/users/1
+  # DELETE /admin/users/1.json
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -93,13 +93,6 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_users_url }
       format.json { head :no_content }
-    end
-  end
-
-  def require_admin
-    unless user_signed_in? and current_user.has_role? "Admin"
-      flash[:error] = "You must be an admin to access this section."
-      redirect_to root_path # halts request cycle
     end
   end
 

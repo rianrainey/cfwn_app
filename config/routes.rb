@@ -6,7 +6,7 @@ CfwnApp::Application.routes.draw do
 
   #resources :workouts
 
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :edit, :update]
 
   # Static Pages
   root                  to: 'static_pages#home'

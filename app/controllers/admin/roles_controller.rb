@@ -2,6 +2,8 @@ class Admin::RolesController < ApplicationController
   # GET /roles
   # GET /roles.json
 
+  before_filter :require_admin
+  
   layout 'admin'
 
   def index
