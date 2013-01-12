@@ -19,4 +19,10 @@ describe "users/edit" do
   #     assert_select "input#user_email", :name => "user[email]"
   #   end
   # end
+  
+  it "authenticated users can only see an edit button on their profile"
+
+
+  
+  
 end

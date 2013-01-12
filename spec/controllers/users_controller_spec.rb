@@ -160,5 +160,18 @@ describe Admin::UsersController do
   #     response.should redirect_to(users_url)
   #   end
   # end
+  
+  describe "authenticated users can only edit their own profile" do
+    it "prevents modification of others' profiles" do
+      user = FactoryGirl.create(:user)
+      puts user.id
+      link = "/users/edit/#{user.id}"
+      puts link
+    end
+
+    it "allows modification of own profile"
+    
+    
+  end
 
 end

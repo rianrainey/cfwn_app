@@ -9,14 +9,16 @@ gem 'bootstrap-wysihtml5-rails'
 
 gem 'devise'
 
-group :development do
+group :development, :test do
 	gem 'rspec-rails'
-	gem 'annotate'
-	gem 'guard-rspec'
+	gem 'annotate' # Automatic model documentation
+	gem 'guard-rspec' # Automate testing
+	gem 'factory_girl_rails' # Uses test data for tests
+	gem 'capybara' # Helps imitate a browser
+	gem 'faker'	# Generates fake test data
 end
 
 group :test do
-	gem 'capybara'
 end
 
 # Gems used only for assets and not required
