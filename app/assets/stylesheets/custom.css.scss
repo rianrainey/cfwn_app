@@ -31,6 +31,10 @@ textarea {
 	resize: vertical;
 }
 
+.clear {
+	clear:both;
+}
+
 .center {
 	text-align: center;
 	h1 {
@@ -195,5 +199,9 @@ input, textarea, select, .uneditable-input {
   background-color: $btn-primary-color;
 }
 
+.checkbox.inline {
+	padding-top: 1em;
+	margin-bottom: 1em;
+}
 
 
