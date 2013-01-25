@@ -6,5 +6,5 @@ class WorkoutsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @workouts }
     end
-  end
+ end
 end
