@@ -1,4 +1,4 @@
-<h1>Listing workouts</h1>
+<h1>All Workouts</h1>
 
 <table class="table table-striped">
   <tr>
@@ -12,6 +12,12 @@
     <td><%= workout.title %></td>
     <td><%= workout.body %></td>
     <td>
+      <% if user_signed_in? %>
+        <ul class="inline">
+          <li><%= link_to 'Add Entry', new_workout_entry_path(workout) %></li>
+        </ul>
+      <% end %>
+      <% if current_user.has_role? "Admin" %>
       <div class="btn-group">
         <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Action<span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -19,7 +25,8 @@
           <li><%= link_to 'Edit', edit_admin_workout_path(workout) %></li>
           <li><%= link_to 'Destroy', admin_workout_path(workout), method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
-      </div>      
+      </div>
+      <% end %>
     </td>
 
   </tr>
@@ -28,4 +35,6 @@
 
 <br />
 
-<%= link_to 'New Workout', new_admin_workout_path %>
+<% if current_user.has_role? "Admin" %>
+  <%= link_to 'New Workout', new_admin_workout_path %>
+<% end %>
