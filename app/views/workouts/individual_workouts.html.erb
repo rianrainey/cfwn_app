@@ -1,0 +1,29 @@
+<h1>My Workouts</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td><%= @workout.title %></td>
+    <td><%= @workout.body %></td>
+    <td>
+      <% if user_signed_in? %>
+        <ul class="inline">
+          <li><%= link_to 'Add', new_workout_entry_path(@workout) %></li> |
+          <li><%= link_to 'View', workout_entries_path(@workout) %></li>
+        </ul>
+      <% end %>
+    </td>
+
+  </tr>
+</table>
+
+<br />
+
+<% if user_signed_in? and current_user.is_admin? %>
+  <%= link_to 'New Workout', new_admin_workout_path %>
+<% end %>

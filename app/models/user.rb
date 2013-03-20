@@ -23,11 +23,18 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   accepts_nested_attributes_for :roles
 
+  has_many :entries
+  has_many :workouts, :through => :entries
+
   # Check if user has a given role
   def has_role?(*role_names)
     self.roles.where(:name => role_names).present?
   end
 
+  def is_admin?
+    admin_roles = ["Super Admin", "Admin"] 
+    self.roles.where(:name => admin_roles).present?
+  end
   # Join first and last names of user
   def name
     [firstName, lastName].join(" ")
