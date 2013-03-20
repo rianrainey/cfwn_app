@@ -32,7 +32,11 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    better_errors (0.7.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     bootstrap-sass (2.0.4.0)
     bootstrap-wysihtml5-rails (0.3.1.10)
       railties (>= 3.0)
@@ -104,6 +108,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
+    pry-rails (0.2.2)
+      pry (>= 0.9.10)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -177,6 +183,8 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  awesome_print
+  better_errors
   bootstrap-sass (= 2.0.4)
   bootstrap-wysihtml5-rails
   capybara
@@ -187,6 +195,8 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   pg
+  pry
+  pry-rails
   rails (= 3.2.8)
   rspec-rails
   sass-rails (~> 3.2.3)

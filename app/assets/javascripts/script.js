@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
 	wysihtmlfive();
+
+  $("#entry_date_performed").datepicker({
+                                       dateFormat: 'yy-mm-dd'});
 });
 
 // Apply wysihtml5 to appropriate text areas

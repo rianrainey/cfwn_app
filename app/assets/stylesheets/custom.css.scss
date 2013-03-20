@@ -70,6 +70,12 @@ a {
 	color: $btn-primary-color;
 }
 
+ul.inline {
+  li {
+    display:inline;
+  }
+}
+
 /* header */ 
 #logo {
 	float: left;
