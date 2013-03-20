@@ -1,0 +1,24 @@
+<h1><%= @workout.title %> Leaderboard</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Rounds</th>
+    <th>Repetitions</th>
+    <th>Time</th>
+  </tr>
+
+  <% @entries.to_enum.with_index(1).each do |entry, rank| %>
+  <tr>
+    <td><%= rank %></td>
+    <td><%= entry.date_performed.strftime("%m/%d/%y") %></td>
+    <td><%= entry.user_id %></td>
+    <td><%= entry.rounds %></td>
+    <td><%= entry.repetitions %></td>
+    <td><%= entry.time %></td>
+  </tr>
+  <% end %>
+</table>
+

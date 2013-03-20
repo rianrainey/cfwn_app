@@ -2,11 +2,26 @@ CfwnApp::Application.routes.draw do
 
   devise_for :users
 
-  get "workouts/index"
+#  get "workouts/index"
 
   #resources :workouts
+  match '/workouts/individual/:user_id/',
+    :as => 'my_workout',
+    :controller => 'workouts',
+    :action => 'individual_workouts',
+    :via => [:get]
+
+  match '/workouts/:workout_id/leaderboard',
+    :as => 'leaderboard',
+    :controller => 'workouts',
+    :action => 'leaderboard',
+    :via => [:get]
 
   resources :users, :only => [:show, :edit, :update]
+
+  resources :workouts, :only => [:index] do
+    resources :entries
+  end
 
   # Static Pages
   root                  to: 'static_pages#home'
