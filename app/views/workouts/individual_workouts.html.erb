@@ -8,6 +8,7 @@
   </tr>
 
   <tr>
+    <% if @workout %>
     <td><%= @workout.title %></td>
     <td><%= @workout.body %></td>
     <td>
@@ -18,7 +19,7 @@
         </ul>
       <% end %>
     </td>
-
+    <% end %>
   </tr>
 </table>
 
