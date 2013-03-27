@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    params[:user][:role_ids] ||= nil
+    #params[:user][:role_ids] ||= nil
     @user = User.find(params[:id])
 
     respond_to do |format|

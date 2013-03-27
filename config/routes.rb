@@ -1,10 +1,7 @@
 CfwnApp::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations' } 
 
-#  get "workouts/index"
-
-  #resources :workouts
   match '/workouts/individual/:user_id/',
     :as => 'my_workout',
     :controller => 'workouts',

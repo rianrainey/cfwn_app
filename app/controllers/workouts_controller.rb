@@ -10,7 +10,10 @@ class WorkoutsController < ApplicationController
 
  def individual_workouts
    @entries = Entry.find_all_by_user_id(params[:user_id])
-   @workout = Workout.find_by_id(@entries.first.workout_id)
+
+   unless @entries.empty? 
+     @workout = Workout.find_by_id(@entries.first.workout_id)
+   end
 
    respond_to do |format|
      format.html
