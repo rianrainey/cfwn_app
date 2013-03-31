@@ -67,4 +67,6 @@ CfwnApp::Application.configure do
   # 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( bootstrap-wysihtml5/wysiwyg-color.css )
+
+  config.action_mailer.default_url_options = { :host => 'cfwn.heroku.com' }
 end
