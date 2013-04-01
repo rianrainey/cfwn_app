@@ -62,10 +62,10 @@ class Admin::WorkoutsController < ApplicationController
   # PUT /workouts/1.json
   def update
     @workout = Workout.find(params[:id])
-
+binding.pry
     respond_to do |format|
       if @workout.update_attributes(params[:workout])
-        format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
+        format.html { redirect_to workouts_path, notice: 'Workout was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
