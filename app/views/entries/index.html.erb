@@ -13,7 +13,7 @@
 <% @entries.each do |entry| %>
   <tr>
     <td><%= entry.date_performed.strftime("%m/%d/%y") %></td>
-    <td><%= entry.body %></td>
+    <td><%= entry.body.html_safe %></td>
     <td><%= entry.rounds %></td>
     <td><%= entry.repetitions %></td>
     <td><%= entry.time %></td>
