@@ -10,7 +10,7 @@
 <% @workouts.each do |workout| %>
   <tr>
     <td><%= workout.title %></td>
-    <td><%= workout.body %></td>
+    <td><%= workout.body.html_safe %></td>
     <td>
       <div class="btn-group">
         <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">Action<span class="caret"></span></a>
