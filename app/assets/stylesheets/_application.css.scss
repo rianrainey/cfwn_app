@@ -1,12 +1,3 @@
-// This one line includes the entire Bootstrap CSS Framework. @requires bootstrap-sass gem
-@import "bootstrap";
-@import "bootstrap-responsive";
-
-// Variables
-$lightgray: #999;
-$primary-color: #51a351;
-$primary-color-secondary: #51a351;
-$btn-primary-color: $primary-color;
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
@@ -209,5 +200,6 @@ input, textarea, select, .uneditable-input {
 	padding-top: 1em;
 	margin-bottom: 1em;
 }
+
 
 
