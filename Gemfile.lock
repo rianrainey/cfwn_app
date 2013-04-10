@@ -218,7 +218,6 @@ DEPENDENCIES
   faker
   guard-rspec
   jquery-rails
-  jquery-ui-rails
   modernizr
   neat
   pg
