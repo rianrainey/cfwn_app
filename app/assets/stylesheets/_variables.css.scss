@@ -1,5 +1,45 @@
+//**** Globals ****
+$base-value: 13;
+
 // Application Variables
 $lightgray: #999;
 $primary-color: #51a351;
 $primary-color-secondary: #51a351;
 $btn-primary-color: $primary-color;
+
+//**** Breakpoints (mobile first) ****
+$desktop: min-width 980px;
+$tablet: min-width 750px;
+$tablet-only: min-width 750px max-width 849px;
+$mobile-only: max-width 749px;
+
+//**** Typography ****
+//$serif-font-family: Georgia, Times, serif;
+//$sans-serif-font-family: 'PT Sans Caption', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//$sans-serif-font-family-alternate: 'Open Sans Condensed', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+//
+//$base-font-family: $sans-serif-font-family;
+//$header-font-family: 'Paytone One', sans-serif;
+//$base-font-size: #{$base-value + 'px'};
+//$base-line-height: 19px;
+
+//**** Grays ****
+$black:                 #000;
+$gray-bg:               #2a2a2a;
+$gray-darker:           #222;
+$gray-dark:             #333;
+$gray:                  #666;
+$gray-light:            #999;
+$gray-lighter:          #eee;
+$white:                 #fff;
+
+
+
+//**** Colors ****
+$blue:                  #0e3651;
+$green:                 #46a546;
+$red:                   #9d261d;
+$yellow:                #fe9800;
+$orange:                #da6b11;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
