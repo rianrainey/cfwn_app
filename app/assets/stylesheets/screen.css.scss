@@ -1,8 +1,10 @@
 /*
+ *= require normalize
  *= require_self
  */
 
 // Utilities
+//@import "mixins";
 @import "bourbon";
 @import "variables";
 @import "neat";
@@ -13,4 +15,5 @@
 
 
 // Global Styles
+//@import "library";
 @import "application";

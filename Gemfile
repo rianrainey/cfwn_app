@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'bootstrap-sass', '2.0.4'
 
 gem 'pg'
 
@@ -35,6 +34,9 @@ group :assets do
   gem 'neat'
   gem 'turbo-sprockets-rails3'
   gem 'modernizr'
+  gem 'bootstrap-sass', '2.0.4'
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -42,7 +44,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
